@@ -1,5 +1,6 @@
 
 Atomo_Agent
+
 An AI agent that:
 1) Searches Google / YouTube / X for keywords (configurable)
 2) Processes top-N results per platform

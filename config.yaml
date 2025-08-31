@@ -1,0 +1,44 @@
+project:
+  name: "Smart Fan SoV – Atomberg"
+  output_dir: "outputs"
+
+keywords:
+  # You can add variants for brownie points; agent iterates these.
+  - "smart fan"
+  - "atomberg smart fan"
+  - "BLDC ceiling fan"
+  - "energy efficient fan"
+
+brand_of_interest: "Atomberg"
+
+competitors:
+  # Adjust for your market
+  - "Havells"
+  - "Crompton"
+  - "Orient"
+  - "Usha"
+  - "Bajaj"
+
+platforms:
+  google:
+    enabled: true
+    top_n: 20        
+    fetch_page_text: true   
+  youtube:
+    enabled: false
+    top_n: 25        
+    include_comments: false 
+  
+
+weights:
+  # Final SoV score = w_mentions * norm_mentions + w_engagement * norm_engagement + w_sentiment * pos_share
+  w_mentions: 0.5
+  w_engagement: 0.35
+  w_sentiment: 0.15
+
+sentiment:
+  # VADER is robust for social & headlines
+  analyzer: "vader"
+
+throttling:
+  per_request_sleep_sec: 0.5
